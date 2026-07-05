@@ -19,9 +19,7 @@
   background:#fff;
   border-radius:14px;
   box-shadow:0 10px 28px rgba(0,0,0,.08);
-  overflow:visible; /* ✅ was hidden - this was cutting the dropdown */
-}
-
+  overflow:visible; /* dropdown can show outside the card */
     }
     .header{
       text-align:center;
@@ -349,7 +347,7 @@
 
   <script>
     // ✅ Webhook URL (same as you requested)
-    const WEBHOOK_URL = "https://l3j2qk3a.rcsrv.net/webhook/payment upload";
+    const WEBHOOK_URL = "https://l3j2qk3a.rcsrv.net/webhook/payment%20upload";
 
     // ✅ Demo data (replace with your real subscriber list)
     const PEOPLE = [
@@ -404,7 +402,7 @@
       ]},
       { name: "Steve Lenny", subscriptions: [
         { label: "Capcut", amount: "KES 1,220" },
-        { label: "Canva", amount: "KES2,130" },
+        { label: "Canva", amount: "KES 2,130" },
       ]},
     ];
 
@@ -509,14 +507,19 @@
       nameList.classList.add("show");
     });
     nameSearch.addEventListener("input", ()=>{
+      // If user types after selecting a name, force them to pick again
+      if(!chosenPerson || nameSearch.value !== chosenPerson.name){
+        chosenPerson = null;
+        selectedName.value = "";
+        toPage2.disabled = true;
+      }
+
       renderNameList(nameSearch.value);
       nameList.classList.add("show");
-      // require click selection
-      toPage2.disabled = !(chosenPerson && selectedName.value === chosenPerson.name);
     });
     document.addEventListener("click", (e)=>{
       const picker = nameSearch.closest(".picker");
-      if(!picker.contains(e.target)) nameList.classList.remove("show");
+      if(picker && !picker.contains(e.target)) nameList.classList.remove("show");
     });
 
     function renderSubscriptions(subs){
