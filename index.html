@@ -14,12 +14,12 @@
       color:#2d3436;
     }
     .container{
-  max-width:920px;
-  margin:0 auto;
-  background:#fff;
-  border-radius:14px;
-  box-shadow:0 10px 28px rgba(0,0,0,.08);
-  overflow:visible; /* dropdown can show outside the card */
+      max-width:920px;
+      margin:0 auto;
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+      overflow:visible;
     }
     .header{
       text-align:center;
@@ -29,10 +29,8 @@
     }
     .header h1{font-size:22px;font-weight:800;margin-bottom:6px}
     .header p{font-size:13px;color:#636e72}
-
     .content{padding:22px}
 
-    /* stepper */
     .stepper{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
@@ -43,7 +41,7 @@
       border:1px solid #e9ecef;
       background:#f8f9fa;
       border-radius:12px;
-      padding:12px 12px;
+      padding:12px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -70,7 +68,6 @@
       background:#fff;
     }
 
-    /* pages */
     .page{
       display:none;
       opacity:0;
@@ -96,7 +93,7 @@
 
     input,textarea,select{
       width:100%;
-      padding:12px 12px;
+      padding:12px;
       border:none;
       border-radius:10px;
       background:#f8f9fa;
@@ -114,9 +111,7 @@
     .hint{margin-top:6px;font-size:12px;color:#636e72}
     .note{margin-top:10px;font-size:12px;color:#636e72}
 
-    .actions{
-      display:flex;gap:10px;margin-top:16px
-    }
+    .actions{display:flex;gap:10px;margin-top:16px}
     .btn{
       width:100%;
       border:none;
@@ -124,15 +119,17 @@
       padding:14px 16px;
       font-weight:800;
       cursor:pointer;
-      transition:transform .07s ease, box-shadow .25s ease, opacity .2s ease;
+      transition:transform .07s ease,box-shadow .25s ease,opacity .2s ease;
     }
     .btn:active{transform:scale(.99)}
-    .btn.primary{background:#6c5ce7;color:#fff;box-shadow:0 10px 18px rgba(108,92,231,.18)}
+    .btn.primary{
+      background:#6c5ce7;color:#fff;
+      box-shadow:0 10px 18px rgba(108,92,231,.18);
+    }
     .btn.primary:hover{box-shadow:0 12px 24px rgba(108,92,231,.28)}
     .btn.secondary{background:#fff;color:#2d3436;border:1px solid #e9ecef}
     .btn[disabled]{opacity:.6;cursor:not-allowed;box-shadow:none}
 
-    /* searchable name popup */
     .picker{position:relative}
     .picker-list{
       position:absolute;left:0;right:0;top:calc(100% + 8px);
@@ -146,9 +143,12 @@
       display:none;
     }
     .picker-list.show{display:block;animation:pop .18s ease}
-    @keyframes pop{from{transform:scale(.98);opacity:0}to{transform:scale(1);opacity:1}}
+    @keyframes pop{
+      from{transform:scale(.98);opacity:0}
+      to{transform:scale(1);opacity:1}
+    }
     .picker-item{
-      padding:12px 12px;
+      padding:12px;
       border-bottom:1px solid #f1f3f4;
       cursor:pointer;
       display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -156,26 +156,28 @@
     .picker-item:hover{background:#f8f9fa}
     .picker-item small{color:#636e72;font-size:12px}
 
-    /* subscription list cards */
     .sub-list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
     .sub-item{
       display:flex;gap:12px;align-items:flex-start;
-      padding:12px;border:1px solid #e9ecef;border-radius:14px;background:#fff;
+      padding:12px;
+      border:1px solid #e9ecef;
+      border-radius:14px;
+      background:#fff;
       transition:.18s ease;
     }
     .sub-item:hover{transform:translateY(-1px)}
     .sub-item input[type="radio"]{
-      width:18px;height:18px;margin-top:2px;accent-color:#6c5ce7;flex:0 0 auto;
+      width:18px;height:18px;margin-top:2px;
+      accent-color:#6c5ce7;flex:0 0 auto;
     }
     .sub-meta{flex:1}
     .sub-title{font-weight:800;margin-bottom:4px}
     .sub-amount{color:#6c5ce7;font-weight:900;font-size:13px}
 
-    /* toast/alerts */
     .alert{
       display:none;
       margin-top:14px;
-      padding:12px 12px;
+      padding:12px;
       border-radius:14px;
       font-weight:700;
       font-size:13px;
@@ -184,11 +186,11 @@
     .alert.ok{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
     .alert.err{background:#fff1f2;border:1px solid #fecdd3;color:#9f1239}
 
-    /* confirmation */
     .check{
       width:64px;height:64px;border-radius:18px;
       display:flex;align-items:center;justify-content:center;
-      background:#f3f1ff;border:1px solid #e9ecef;margin:0 auto 12px;
+      background:#f3f1ff;border:1px solid #e9ecef;
+      margin:0 auto 12px;
       color:#6c5ce7;font-size:30px;font-weight:900;
       animation:pop .22s ease;
     }
@@ -226,9 +228,18 @@
 
     <div class="content">
       <div class="stepper">
-        <div class="step active" id="badge1"><strong>1. Select Name</strong><div class="badge">1</div></div>
-        <div class="step" id="badge2"><strong>2. Select & Upload</strong><div class="badge">2</div></div>
-        <div class="step" id="badge3"><strong>3. Confirmation</strong><div class="badge">3</div></div>
+        <div class="step active" id="badge1">
+          <strong>1. Select Name</strong>
+          <div class="badge">1</div>
+        </div>
+        <div class="step" id="badge2">
+          <strong>2. Select & Upload</strong>
+          <div class="badge">2</div>
+        </div>
+        <div class="step" id="badge3">
+          <strong>3. Confirmation</strong>
+          <div class="badge">3</div>
+        </div>
       </div>
 
       <!-- PAGE 1 -->
@@ -236,9 +247,16 @@
         <div class="card">
           <div class="row one">
             <div class="form-group">
-              <label for="nameSearch">Select Your Name <span class="required">*</span></label>
+              <label for="nameSearch">
+                Select Your Name <span class="required">*</span>
+              </label>
               <div class="picker">
-                <input id="nameSearch" type="text" placeholder="Type to search..." autocomplete="off">
+                <input
+                  id="nameSearch"
+                  type="text"
+                  placeholder="Type to search..."
+                  autocomplete="off"
+                >
                 <div class="picker-list" id="nameList"></div>
               </div>
               <div class="hint">Click your name from the popup list.</div>
@@ -248,11 +266,20 @@
           <div class="row">
             <div class="form-group">
               <label>Selected Name</label>
-              <input id="selectedName" type="text" readonly placeholder="No name selected yet">
+              <input
+                id="selectedName"
+                type="text"
+                readonly
+                placeholder="No name selected yet"
+              >
             </div>
             <div class="form-group">
               <label for="ref">Phone / Reference (Optional)</label>
-              <input id="ref" type="text" placeholder="e.g. +2547... / M-Pesa ref">
+              <input
+                id="ref"
+                type="text"
+                placeholder="e.g. +2547... / M-Pesa ref"
+              >
             </div>
           </div>
 
@@ -281,7 +308,9 @@
 
             <div class="row one">
               <div class="form-group">
-                <label>Select Subscription Paid <span class="required">*</span></label>
+                <label>
+                  Select Subscription Paid <span class="required">*</span>
+                </label>
                 <div class="sub-list" id="subsContainer"></div>
                 <div class="note">Choose the exact subscription you paid for.</div>
               </div>
@@ -289,12 +318,34 @@
 
             <div class="row">
               <div class="form-group">
-                <label for="amountShown">Amount</label>
-                <input id="amountShown" name="amountShown" readonly placeholder="Select subscription to view amount">
+                <label for="amountShown">
+                  Amount Paid (KES) <span class="required">*</span>
+                </label>
+                <input
+                  id="amountShown"
+                  name="amountShown"
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  required
+                  placeholder="Select subscription, then edit amount"
+                >
+                <div class="hint">
+                  The subscription amount is prefilled. You can change it
+                  to the amount you paid.
+                </div>
               </div>
               <div class="form-group">
-                <label for="proof">Attach Proof <span class="required">*</span></label>
-                <input id="proof" name="proof" type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                <label for="proof">
+                  Attach Proof <span class="required">*</span>
+                </label>
+                <input
+                  id="proof"
+                  name="proof"
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  required
+                >
                 <div class="hint">Accepted: PDF, JPG, PNG</div>
               </div>
             </div>
@@ -302,7 +353,12 @@
             <div class="row one">
               <div class="form-group">
                 <label for="notes">Notes (Optional)</label>
-                <textarea id="notes" name="notes" maxlength="300" placeholder="Any additional details about the payment..."></textarea>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  maxlength="300"
+                  placeholder="Any additional details about the payment..."
+                ></textarea>
                 <div class="hint"><span id="charCount">0</span>/300</div>
               </div>
             </div>
@@ -312,8 +368,12 @@
             <input type="hidden" name="submittedAt" id="submittedAt">
 
             <div class="actions">
-              <button type="button" class="btn secondary" id="backTo1">Back</button>
-              <button type="submit" class="btn primary" id="submitBtn">Submit</button>
+              <button type="button" class="btn secondary" id="backTo1">
+                Back
+              </button>
+              <button type="submit" class="btn primary" id="submitBtn">
+                Submit
+              </button>
             </div>
 
             <div class="alert err" id="p2Err"></div>
@@ -321,80 +381,107 @@
         </div>
       </div>
 
-      <!-- PAGE 3 (CONFIRMATION) -->
+      <!-- PAGE 3 -->
       <div class="page" id="page3">
         <div class="card" style="text-align:center;">
           <div class="check">✓</div>
-          <h2 style="font-size:18px;font-weight:900;margin-bottom:6px;">Submission Received</h2>
+          <h2 style="font-size:18px;font-weight:900;margin-bottom:6px;">
+            Submission Received
+          </h2>
           <p style="font-size:13px;color:#636e72;margin-bottom:10px;">
             Thank you. Your payment proof has been submitted successfully.
           </p>
 
           <div class="summary" id="summaryBox"></div>
-
           <div class="small" id="confirmTime"></div>
 
           <div class="actions" style="margin-top:14px;">
-            <button class="btn secondary" id="newSubmission">Submit Another</button>
+            <button class="btn secondary" id="newSubmission">
+              Submit Another
+            </button>
           </div>
 
           <div class="alert err" id="p3Err"></div>
         </div>
       </div>
-
     </div>
   </div>
 
   <script>
-    // ✅ Webhook URL (same as you requested)
-    const WEBHOOK_URL = "https://l3j2qk3a.rcsrv.net/webhook/payment%20upload";
+    const WEBHOOK_URL =
+      "https://l3j2qk3a.rcsrv.net/webhook/payment%20upload";
 
-    // ✅ Demo data (replace with your real subscriber list)
     const PEOPLE = [
-      { name: "Ian Masae", subscriptions: [
-        { label: "Anthropic AI", amount: "KES  14,602.8" },
-      ]},
-      { name: "Victor Kilyungi", subscriptions: [
-         { label: "Anthropic AI", amount: "KES 3,200" },
-         { label: "ChatGPT ", amount: "KES 3,200" },
-      ]},
-      { name: "Alex", subscriptions: [
-        { label: "Anthropic AI", amount: "KES 3,200" },
-        { label: "ChatGPT Plus", amount: "KES 3,200" },
-      ]},
-      { name: "Cess", subscriptions: [
-        { label: "Anthropic AI", amount: "KES 3,200" },
-      ]},
-      { name: "Geoffrey", subscriptions: [
-        { label: "Chatgpt Plus", amount: "KES 3,200" },
-        { label: "Claude Ai", amount: "KES 3,200" },
-      ]},
-      { name: "Peter Kayere", subscriptions: [
-        { label: "ZED IDE", amount: "KES 3,200" },
-        { label: "Mailchimp", amount: "KES 6,650" },
-        { label: "Linode", amount: "KES 1,330" },
-        { label: "CircleCI", amount: "KES 2,000" },
-        { label: "DockerHub", amount: "KES 1,500" },
-      ]},
-      { name: "Robinson Muhia", subscriptions: [
-        { label: "Pacdora", amount: "KES 4,300" },
-        { label: "Anthropic AI", amount: "KES 3,200" },
-        { label: "Figma", amount: "KES 15,530" },
-      ]},
-      { name: "Mwakireti", subscriptions: [
-        { label: "Zed IDE", amount: "KES 3,200" },
-      ]},
-      { name: "Ephraim Kisaka", subscriptions: [
-        { label: "ChatGPT AI", amount: "KES 3,200" },
-        { label: "N8N", amount: "KES 1,300" },
-        { label: "Convex ( DataBase)", amount: "KES 3,238" },
-        { label: "TikTok ads", amount: "KES 2,000" },
-        { label: "Meta Ads", amount: "KES 5,000" },
-        { label: "Anthropic AI", amount: "KES 3,200" },
-      ]},
+      {
+        name: "Ian Masae",
+        subscriptions: [
+          { label: "Anthropic AI", amount: "KES 14,602.8" }
+        ]
+      },
+      {
+        name: "Victor Kilyungi",
+        subscriptions: [
+          { label: "Anthropic AI", amount: "KES 3,200" },
+          { label: "ChatGPT ", amount: "KES 3,200" }
+        ]
+      },
+      {
+        name: "Alex",
+        subscriptions: [
+          { label: "Anthropic AI", amount: "KES 3,200" },
+          { label: "ChatGPT Plus", amount: "KES 3,200" }
+        ]
+      },
+      {
+        name: "Cess",
+        subscriptions: [
+          { label: "Anthropic AI", amount: "KES 3,200" }
+        ]
+      },
+      {
+        name: "Geoffrey",
+        subscriptions: [
+          { label: "Chatgpt Plus", amount: "KES 3,200" },
+          { label: "Claude Ai", amount: "KES 3,200" }
+        ]
+      },
+      {
+        name: "Peter Kayere",
+        subscriptions: [
+          { label: "ZED IDE", amount: "KES 3,200" },
+          { label: "Mailchimp", amount: "KES 6,650" },
+          { label: "Linode", amount: "KES 1,330" },
+          { label: "CircleCI", amount: "KES 2,000" },
+          { label: "DockerHub", amount: "KES 1,500" }
+        ]
+      },
+      {
+        name: "Robinson Muhia",
+        subscriptions: [
+          { label: "Pacdora", amount: "KES 4,300" },
+          { label: "Anthropic AI", amount: "KES 3,200" },
+          { label: "Figma", amount: "KES 15,530" }
+        ]
+      },
+      {
+        name: "Mwakireti",
+        subscriptions: [
+          { label: "Zed IDE", amount: "KES 3,200" }
+        ]
+      },
+      {
+        name: "Ephraim Kisaka",
+        subscriptions: [
+          { label: "ChatGPT AI", amount: "KES 3,200" },
+          { label: "N8N", amount: "KES 1,300" },
+          { label: "Convex ( DataBase)", amount: "KES 3,238" },
+          { label: "TikTok ads", amount: "KES 2,000" },
+          { label: "Meta Ads", amount: "KES 5,000" },
+          { label: "Anthropic AI", amount: "KES 3,200" }
+        ]
+      }
     ];
 
-    // --- Elements
     const badge1 = document.getElementById("badge1");
     const badge2 = document.getElementById("badge2");
     const badge3 = document.getElementById("badge3");
@@ -425,78 +512,85 @@
     const notes = document.getElementById("notes");
     const charCount = document.getElementById("charCount");
     const submitBtn = document.getElementById("submitBtn");
-
     const backTo1 = document.getElementById("backTo1");
 
     const summaryBox = document.getElementById("summaryBox");
     const confirmTime = document.getElementById("confirmTime");
     const newSubmission = document.getElementById("newSubmission");
-
     const paymentForm = document.getElementById("paymentForm");
 
     let chosenPerson = null;
 
-    // --- Helpers
-    function setStep(step){
-      // badges
-      [badge1,badge2,badge3].forEach(b=>b.classList.remove("active"));
-      if(step===1) badge1.classList.add("active");
-      if(step===2) badge2.classList.add("active");
-      if(step===3) badge3.classList.add("active");
+    function setStep(step) {
+      [badge1, badge2, badge3].forEach(b => {
+        b.classList.remove("active");
+      });
 
-      // pages
-      [page1,page2,page3].forEach(p=>p.classList.remove("active"));
-      if(step===1) page1.classList.add("active");
-      if(step===2) page2.classList.add("active");
-      if(step===3) page3.classList.add("active");
+      if (step === 1) badge1.classList.add("active");
+      if (step === 2) badge2.classList.add("active");
+      if (step === 3) badge3.classList.add("active");
 
-      // errors
-      p1Err.style.display="none";
-      p2Err.style.display="none";
-      p3Err.style.display="none";
+      [page1, page2, page3].forEach(p => {
+        p.classList.remove("active");
+      });
+
+      if (step === 1) page1.classList.add("active");
+      if (step === 2) page2.classList.add("active");
+      if (step === 3) page3.classList.add("active");
+
+      p1Err.style.display = "none";
+      p2Err.style.display = "none";
+      p3Err.style.display = "none";
     }
 
-    function showError(el, msg){
+    function showError(el, msg) {
       el.textContent = msg;
       el.style.display = "block";
     }
 
-    function renderNameList(filter=""){
+    function renderNameList(filter = "") {
       const q = filter.trim().toLowerCase();
-      const matches = PEOPLE.filter(p => p.name.toLowerCase().includes(q));
+      const matches = PEOPLE.filter(p =>
+        p.name.toLowerCase().includes(q)
+      );
+
       nameList.innerHTML = "";
 
-      if(matches.length === 0){
+      if (matches.length === 0) {
         const empty = document.createElement("div");
         empty.className = "picker-item";
-        empty.innerHTML = `<div>No matches found</div>`;
+        empty.innerHTML = "<div>No matches found</div>";
         nameList.appendChild(empty);
         return;
       }
 
-      matches.forEach(p=>{
+      matches.forEach(p => {
         const item = document.createElement("div");
         item.className = "picker-item";
-        item.innerHTML = `<div>${p.name}</div><small>${p.subscriptions.length} subscription(s)</small>`;
-        item.addEventListener("click", ()=>{
+        item.innerHTML = `
+          <div>${escapeHtml(p.name)}</div>
+          <small>${p.subscriptions.length} subscription(s)</small>
+        `;
+
+        item.addEventListener("click", () => {
           chosenPerson = p;
           selectedName.value = p.name;
           nameSearch.value = p.name;
           nameList.classList.remove("show");
           toPage2.disabled = false;
         });
+
         nameList.appendChild(item);
       });
     }
 
-    // name search interactions
-    nameSearch.addEventListener("focus", ()=>{
+    nameSearch.addEventListener("focus", () => {
       renderNameList(nameSearch.value);
       nameList.classList.add("show");
     });
-    nameSearch.addEventListener("input", ()=>{
-      // If user types after selecting a name, force them to pick again
-      if(!chosenPerson || nameSearch.value !== chosenPerson.name){
+
+    nameSearch.addEventListener("input", () => {
+      if (!chosenPerson || nameSearch.value !== chosenPerson.name) {
         chosenPerson = null;
         selectedName.value = "";
         toPage2.disabled = true;
@@ -505,53 +599,74 @@
       renderNameList(nameSearch.value);
       nameList.classList.add("show");
     });
-    document.addEventListener("click", (e)=>{
+
+    document.addEventListener("click", e => {
       const picker = nameSearch.closest(".picker");
-      if(picker && !picker.contains(e.target)) nameList.classList.remove("show");
+      if (picker && !picker.contains(e.target)) {
+        nameList.classList.remove("show");
+      }
     });
 
-    function renderSubscriptions(subs){
+    function renderSubscriptions(subs) {
       subsContainer.innerHTML = "";
-      subs.forEach(s=>{
+
+      subs.forEach(s => {
         const label = document.createElement("label");
         label.className = "sub-item";
 
-        const r = document.createElement("input");
-        r.type = "radio";
-        r.name = "subChoice";
-        r.value = s.label;
-        r.required = true;
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "subChoice";
+        radio.value = s.label;
+        radio.required = true;
 
-        r.addEventListener("change", ()=>{
-          amountShown.value = s.amount;
+        radio.addEventListener("change", () => {
+          // Prefill a plain number so it can be edited.
+          amountShown.value = s.amount.replace(/[^0-9.]/g, "");
           subscriptionName.value = s.label;
-          subscriptionAmount.value = s.amount;
+
+          // Update the hidden value used by the webhook.
+          syncPaymentAmount();
         });
 
         const meta = document.createElement("div");
         meta.className = "sub-meta";
         meta.innerHTML = `
-          <div class="sub-title">${s.label}</div>
-          <div class="sub-amount">${s.amount}</div>
+          <div class="sub-title">${escapeHtml(s.label)}</div>
+          <div class="sub-amount">${escapeHtml(s.amount)}</div>
         `;
 
-        label.appendChild(r);
+        label.appendChild(radio);
         label.appendChild(meta);
         subsContainer.appendChild(label);
       });
     }
 
-    // page 1 -> page 2
-    toPage2.addEventListener("click", ()=>{
-      if(!chosenPerson){
+    function syncPaymentAmount() {
+      const amount = amountShown.valueAsNumber;
+
+      subscriptionAmount.value =
+        Number.isFinite(amount) && amount > 0
+          ? "KES " + amount.toLocaleString("en-KE", {
+              maximumFractionDigits: 2
+            })
+          : "";
+    }
+
+    // Every edit updates the amount that will be submitted.
+    amountShown.addEventListener("input", syncPaymentAmount);
+
+    toPage2.addEventListener("click", () => {
+      if (!chosenPerson) {
         showError(p1Err, "Please select your name from the popup list.");
         return;
       }
+
       clientName.value = chosenPerson.name;
       clientRef.value = refInput.value || "";
+
       renderSubscriptions(chosenPerson.subscriptions);
 
-      // reset page2 fields
       amountShown.value = "";
       subscriptionName.value = "";
       subscriptionAmount.value = "";
@@ -562,24 +677,37 @@
       setStep(2);
     });
 
-    // back to page 1
-    backTo1.addEventListener("click", ()=>{
+    backTo1.addEventListener("click", () => {
       setStep(1);
     });
 
-    // notes counter
-    notes.addEventListener("input", ()=>{ charCount.textContent = notes.value.length; });
+    notes.addEventListener("input", () => {
+      charCount.textContent = notes.value.length;
+    });
 
-    // submit (multipart/form-data + file)
-    paymentForm.addEventListener("submit", async (e)=>{
+    paymentForm.addEventListener("submit", async e => {
       e.preventDefault();
 
-      if(!subscriptionName.value || !subscriptionAmount.value){
+      // Read the latest edited amount before sending.
+      syncPaymentAmount();
+
+      if (!subscriptionName.value) {
         showError(p2Err, "Please select a subscription.");
         return;
       }
+
+      if (!amountShown.checkValidity() || !subscriptionAmount.value) {
+        showError(
+          p2Err,
+          "Please enter a valid payment amount greater than zero (up to two decimal places)."
+        );
+        amountShown.reportValidity();
+        return;
+      }
+
       const proofFile = document.getElementById("proof").files[0];
-      if(!proofFile){
+
+      if (!proofFile) {
         showError(p2Err, "Please attach payment proof (PDF/JPG/PNG).");
         return;
       }
@@ -588,7 +716,7 @@
       submitBtn.textContent = "Submitting...";
       submitBtn.disabled = true;
 
-      try{
+      try {
         const nowIso = new Date().toISOString();
         submittedAt.value = nowIso;
 
@@ -601,42 +729,58 @@
         fd.append("submittedAt", nowIso);
         fd.append("proof", proofFile);
 
-        const res = await fetch(WEBHOOK_URL, { method:"POST", body: fd });
+        const res = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          body: fd
+        });
 
-        if(!res.ok){
+        if (!res.ok) {
           showError(p2Err, "Failed to submit. Please try again.");
           return;
         }
 
-        // Build confirmation summary
         summaryBox.innerHTML = `
-          <div class="summary-row"><span>Name</span><span>${escapeHtml(clientName.value)}</span></div>
-          <div class="summary-row"><span>Reference</span><span>${escapeHtml(clientRef.value || "—")}</span></div>
-          <div class="summary-row"><span>Subscription</span><span>${escapeHtml(subscriptionName.value)}</span></div>
-          <div class="summary-row"><span>Amount</span><span>${escapeHtml(subscriptionAmount.value)}</span></div>
-          <div class="summary-row"><span>Proof File</span><span>${escapeHtml(proofFile.name)}</span></div>
+          <div class="summary-row">
+            <span>Name</span>
+            <span>${escapeHtml(clientName.value)}</span>
+          </div>
+          <div class="summary-row">
+            <span>Reference</span>
+            <span>${escapeHtml(clientRef.value || "—")}</span>
+          </div>
+          <div class="summary-row">
+            <span>Subscription</span>
+            <span>${escapeHtml(subscriptionName.value)}</span>
+          </div>
+          <div class="summary-row">
+            <span>Amount</span>
+            <span>${escapeHtml(subscriptionAmount.value)}</span>
+          </div>
+          <div class="summary-row">
+            <span>Proof File</span>
+            <span>${escapeHtml(proofFile.name)}</span>
+          </div>
         `;
-        confirmTime.textContent = "Submitted at: " + new Date(nowIso).toLocaleString();
+
+        confirmTime.textContent =
+          "Submitted at: " + new Date(nowIso).toLocaleString();
 
         setStep(3);
-
-      }catch(err){
+      } catch (err) {
         showError(p2Err, "Network error — please check your connection.");
-      }finally{
+      } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     });
 
-    // new submission (reset everything)
-    newSubmission.addEventListener("click", ()=>{
+    newSubmission.addEventListener("click", () => {
       chosenPerson = null;
       nameSearch.value = "";
       selectedName.value = "";
       refInput.value = "";
       toPage2.disabled = true;
 
-      // reset page2 form
       paymentForm.reset();
       subsContainer.innerHTML = "";
       amountShown.value = "";
@@ -647,10 +791,13 @@
       setStep(1);
     });
 
-    // simple escape for summary
-    function escapeHtml(str){
+    function escapeHtml(str) {
       return String(str).replace(/[&<>"']/g, s => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
       }[s]));
     }
   </script>
